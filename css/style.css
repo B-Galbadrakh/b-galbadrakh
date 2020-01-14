@@ -7,4 +7,9 @@
 }
 .posterDiv {
   margin-left: 30px;
+  font-size: 4;
+}
+
+.moodClass {
+  font-family: "Courier New", Courier, monospace;
 }

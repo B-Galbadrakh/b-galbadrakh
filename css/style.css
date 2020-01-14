@@ -21,3 +21,23 @@
 .initLet {
   initial-letter: initial;
 }
+p::first-letter {
+  float: left;
+  font-size: 45px;
+  line-height: 1;
+  font-weight: bold;
+  margin-right: 9px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul.basic-mov > li {
+  color: orange;
+  font-size: 12px;
+}
+
+.sub-mov {
+  color: black;
+}

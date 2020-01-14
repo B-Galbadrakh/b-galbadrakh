@@ -1,0 +1,10 @@
+.jumbotronHeaderImg {
+  background-image: url("../images/cover2.png");
+  min-width: 100%;
+}
+.headerDiv {
+  margin-top: 50px;
+}
+.posterDiv {
+  margin-left: 30px;
+}

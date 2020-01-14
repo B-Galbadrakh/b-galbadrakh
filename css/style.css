@@ -13,3 +13,11 @@
 .moodClass {
   font-family: "Courier New", Courier, monospace;
 }
+
+.no-under-line {
+  text-decoration: none;
+}
+
+.initLet {
+  initial-letter: initial;
+}

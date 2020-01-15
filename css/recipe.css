@@ -1,0 +1,43 @@
+h1 {
+  background-color: #f0f0f0;
+  color: #a4a400;
+  text-decoration: underline;
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 22pt;
+  font-weight: bold;
+}
+
+.sub-header {
+  font-size: 18pt;
+  text-align: left;
+}
+
+.brief {
+  font-family: Georgia, Garamond;
+  font-size: 11pt;
+  color: #404040;
+}
+
+.order-list {
+  font-weight: bold;
+}
+
+.no-cake {
+  text-decoration: line-through;
+}
+
+.comment {
+  background-color: #ffff00;
+  font-style: italic;
+  margin: 15px;
+}
+
+a {
+  color: #a4a400;
+}
+
+.copy-right {
+  text-align: right;
+}

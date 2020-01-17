@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Galbadrakh</title>
     <link rel="stylesheet" type="text/css" href="./css/responsive.css" />
     <link
@@ -17,7 +18,6 @@
     </div>
 
     <div>
-      <!-- Nav bar -->
       <ul>
         <li>
           <a>Menu1</a>
@@ -30,11 +30,20 @@
         </li>
       </ul>
     </div>
+
     <div class="row">
-      <!-- main -->
-      <div column="col-sm-3">Column1</div>
-      <div column="col-sm-3"></div>Column2</div>
-      <div column="col-sm-3">Column3</div>
+      <div class="col-s-1" id="column1">
+        <span>Column1</span>
+      </div>
+      <div class="col-s-2" id="column2">
+        <span>Column3</span>
+      </div>
+      <div class="col-s-3" id="column3">
+        <span>Column2</span>
+      </div>
+    </div>
+    <div class="footer" id="cust-footer">
+      Footer
     </div>
   </body>
 </html>

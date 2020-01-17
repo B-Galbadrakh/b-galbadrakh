@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!-- Dear professor Levi,
+ -->
+<html>
+  <head>
+    <title>JS Intro WAP</title>
+  </head>
+  <body>
+    <h1>Look for the Chrome Developer Console</h1>
+    <h3>Windows: CTRL+SHIFT+J;</h3>
+    <h3>MAC: Command+Option+I;</h3>
+    <br />
+    <div>
+      NOTE: <br />Tasks from 1-8 are in Developer console.<br />Task number 9 is
+      below
+    </div>
+    <div>
+      <h4>Map function test</h4>
+      <h5>Multiply each element by 10</h5>
+      [1,2,3,4]
+      <button onClick="testMap()">Map function</button>
+      <span id="result">0</span>
+    </div>
+
+    <div>
+      <h4>Filter function test</h4>
+      <h5>return array with all elements equal to 3;</h5>
+      [1,2,3,4,3,3]
+      <button onClick="testFilter()">Filter function</button>
+      <span id="filterResult">0</span>
+    </div>
+
+    <div>
+      <h4>Reduce function test</h4>
+      <h5>return the product of all elements;</h5>
+      [1,2,3,4,3,3]
+      <button onClick="testReduce()">Reduce function</button>
+      <span id="reduceResult">0</span>
+    </div>
+
+    <script text="text/javascript">
+      function myFunctionTest(expected, result) {
+        if (typeof expected == "object" && typeof result == "object") {
+          if (JSON.stringify(expected) == JSON.stringify(result)) {
+            return "TEST SUCCEEDED expected:" + expected + " found: " + result;
+          } else {
+            return "TEST FAILED expected:" + expected + " found: " + result;
+          }
+        }
+
+        if (expected === result) {
+          return "TEST SUCCEEDED expected:" + expected + " found: " + result;
+        } else {
+          return "TEST FAILED expected:" + expected + " found: " + result;
+        }
+      }
+      /*
+      1. Takes two argument and returns max one;
+      */
+      function max(a, b) {
+        if (a === b) {
+          console.log("values are equal");
+        }
+        if (a > b) {
+          return a;
+        } else {
+          return b;
+        }
+      }
+      /*2. Takes three arguments and returns max from these three numbers*/
+      function maxOfThree(a, b, c) {
+        if (a > b) {
+          if (a > c) {
+            return a;
+          } else {
+            return c;
+          }
+        } else if (b > c) {
+          return b;
+        } else {
+          return c;
+        }
+      }
+
+      // 3. checks if passed argument is vowel or not
+      function isVowel(a) {
+        const vowels = ["a", "e", "i", "o", "u"];
+        const b = a.toLowerCase();
+        if (vowels.indexOf(b) != -1) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      // 4. returns sum of array
+      function sum(arr) {
+        return arr.reduce((pre, loc) => {
+          return pre + loc;
+        });
+      }
+
+      // 5. returns multipliction of array
+      function multiply(arr) {
+        return arr.reduce((pre, loc) => {
+          return pre * loc;
+        }, 1);
+      }
+      // 6. reverse string
+      function reverse(a) {
+        let retVal = "";
+
+        for (let i = a.length - 1; i >= 0; i--) {
+          retVal = retVal + a.charAt(i);
+        }
+        return retVal;
+      }
+      // returns longes word length of passed array of string argument
+      function findLongestWord(a) {
+        let longest = a[0];
+        for (let i = 1; i < a.length; i++) {
+          if (longest.length < a[i].length) {
+            longest = a[i];
+          }
+        }
+        return longest.length;
+      }
+
+      function filterLongWords(arr, l) {
+        let retArr = [];
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i].length > l) {
+            retArr.push(arr[i]);
+          }
+        }
+        return retArr;
+      }
+
+      function testMap() {
+        const a = [1, 2, 3, 4];
+        const r = a.map(b => {
+          return b * 10;
+        });
+        document.getElementById("result").innerHTML = r;
+      }
+
+      function testFilter() {
+        const a = [1, 2, 3, 4, 3, 3];
+        const r = a.filter(e => {
+          return e == 3;
+        });
+        document.getElementById("filterResult").innerHTML = r;
+      }
+
+      function testReduce() {
+        const a = [1, 2, 3, 4, 3, 3];
+        const r = a.reduce((prev, curr) => {
+          return prev * curr;
+        });
+        document.getElementById("reduceResult").innerHTML = r;
+      }
+
+      console.log(
+        "Expected result of max(20, 10) is 20 " +
+          myFunctionTest(20, max(20, 10))
+      );
+      console.log(
+        "Expected output of maxOfThree(30,20,10) is 30 " +
+          myFunctionTest(30, maxOfThree(30, 20, 10))
+      );
+
+      console.log(
+        "Expected output of isVowel('a') is true " +
+          myFunctionTest(true, isVowel("a"))
+      );
+
+      console.log(
+        "Expected output of sum([1,2,3,4]) is 10 " +
+          myFunctionTest(10, sum([1, 2, 3, 4]))
+      );
+
+      console.log(
+        "Expected output of multiply([1,2,3,4]) is 24 " +
+          myFunctionTest(24, multiply([1, 2, 3, 4]))
+      );
+
+      console.log(
+        "Expecting output of reverse('jag testar') \"is ratset gaj\" " +
+          myFunctionTest("ratset gaj", reverse("jag testar"))
+      );
+      console.log(
+        "Expecting output of findLongestWord(['a','aa','aaa']) is 3 " +
+          myFunctionTest(3, findLongestWord(["a", "aa", "aaa"]))
+      );
+
+      // console.log("Expecting output of findLongestWo")
+      console.log(
+        "Expecting output of filterLongWords(['aa','aaa','aaaa','aaaaa'], 3) is ['aaaa','aaaaa']" +
+          myFunctionTest(
+            ["aaaa", "aaaaa"],
+            filterLongWords(["aa", "aaa", "aaaa", "aaaaa"], 3)
+          )
+      );
+    </script>
+  </body>
+</html>

@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<!-- Dear professor Levi,
+<!-- 
+  Dear professor Levi,
+I have completed lab assignment. I have spent 2 hours on this task and valuable things were follows. I have learned that array is a type of Object, and about the test function. I have added additional if statement in myFunctionTest to handle returning array and make the test function work correctly.
+I have struggled a little bit to realize what purpose of myFunctionTest is, soon I realized that this second argument is a function and calls it prior to myFunctionTest, and passes result as a second argument.
+Also, I learned about console.assert. Console assert prints message to console not interrupting code.
+Thank you
+
  -->
 <html>
   <head>
@@ -160,41 +166,41 @@
         document.getElementById("reduceResult").innerHTML = r;
       }
 
-      console.log(
+      console.assert(
         "Expected result of max(20, 10) is 20 " +
           myFunctionTest(20, max(20, 10))
       );
-      console.log(
+      console.assert(
         "Expected output of maxOfThree(30,20,10) is 30 " +
           myFunctionTest(30, maxOfThree(30, 20, 10))
       );
 
-      console.log(
+      console.assert(
         "Expected output of isVowel('a') is true " +
           myFunctionTest(true, isVowel("a"))
       );
 
-      console.log(
+      console.assert(
         "Expected output of sum([1,2,3,4]) is 10 " +
           myFunctionTest(10, sum([1, 2, 3, 4]))
       );
 
-      console.log(
+      console.assert(
         "Expected output of multiply([1,2,3,4]) is 24 " +
           myFunctionTest(24, multiply([1, 2, 3, 4]))
       );
 
-      console.log(
+      console.assert(
         "Expecting output of reverse('jag testar') \"is ratset gaj\" " +
           myFunctionTest("ratset gaj", reverse("jag testar"))
       );
-      console.log(
+      console.assert(
         "Expecting output of findLongestWord(['a','aa','aaa']) is 3 " +
           myFunctionTest(3, findLongestWord(["a", "aa", "aaa"]))
       );
 
       // console.log("Expecting output of findLongestWo")
-      console.log(
+      console.assert(
         "Expecting output of filterLongWords(['aa','aaa','aaaa','aaaaa'], 3) is ['aaaa','aaaaa']" +
           myFunctionTest(
             ["aaaa", "aaaaa"],

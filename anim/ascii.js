@@ -95,23 +95,9 @@ function animeChange() {
 }
 
 function changeFont() {
-  let e = document.getElementById("text-area");
-  let font = document.getElementById("fontsize");
-  let val = font.options[font.selectedIndex].value.toLowerCase();
-
-  if (val === "tiny") {
-    e.style.fontSize = "7pt";
-  } else if (val === "small") {
-    e.style.fontSize = "10pt";
-  } else if (val === "medium") {
-    e.style.fontSize = "12pt";
-  } else if (val === "large") {
-    e.style.fontSize = "16pt";
-  } else if (val === "extra large") {
-    e.style.fontSize = "24pt";
-  } else if (val === "xxl") {
-    e.style.fontSize = "32pt";
-  }
+  var size = this.value;
+  var textArea = document.getElementById("text-area");
+  textArea.style.fontSize = parseInt(size) + "pt";
 }
 
 function turbo() {

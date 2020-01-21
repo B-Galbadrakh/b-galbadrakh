@@ -17,7 +17,7 @@ legend {
   text-align: left;
 }
 article {
-  alignment-adjust: central;
+  text-size-adjust: central;
 }
 button {
   width: 47%;

@@ -1,4 +1,4 @@
-let currAnim = null;
+let currAnim = "Blank";
 var timer = "";
 let currText = "";
 let currFont = "12pt";
@@ -6,6 +6,7 @@ let speed = 250;
 let step = 0;
 window.onload = function() {
   document.getElementById("animation").onchange = animeChange;
+  document.getElementById("animation").value = "Blank";
   document.getElementById("start").onclick = start;
   document.getElementById("stop").onclick = stop;
   document.getElementById("fontsize").onchange = changeFont;
@@ -18,14 +19,11 @@ function start() {
   document.getElementById("start").disabled = true;
   document.getElementById("stop").disabled = false;
   document.getElementById("animation").disabled = true;
-  console.log(currAnim);
-  if (currAnim != "" || currAnim != "Blank" || currAnim != "null") {
-    run(getAnim(currAnim), speed);
-  }
+
+  run(getAnim(currAnim), speed);
 }
 
 function getAnim(name) {
-  if (name === "Blank" || name == "") return;
   if (name === "Exercise") {
     return ANIMATIONS["Exercise"];
   }
@@ -43,7 +41,6 @@ function stop() {
   document.getElementById("stop").disabled = true;
   document.getElementById("start").disabled = false;
   document.getElementById("animation").disabled = false;
-  console.log(timer);
   if (timer) {
     clearInterval(timer);
     document.getElementById("text-area").value = currText;
@@ -51,22 +48,26 @@ function stop() {
 }
 
 function run(anim, speed) {
-  anim = anim.split("=====\n");
-  // let i = 0;
-  let i = step;
-  if (timer) {
-    clearInterval(timer);
-  }
-
-  timer = setInterval(() => {
-    if (i === anim.length) {
-      i = 0;
-      step = 0;
+  let e = document.getElementById("animation");
+  // console.log(e.selectedIndex);
+  if (e.selectedIndex != 0) {
+    anim = anim.split("=====\n");
+    // let i = 0;
+    let i = step;
+    if (timer) {
+      clearInterval(timer);
     }
-    document.getElementById("text-area").value = anim[i];
-    i++;
-    step++;
-  }, speed);
+
+    timer = setInterval(() => {
+      if (i === anim.length) {
+        i = 0;
+        step = 0;
+      }
+      document.getElementById("text-area").value = anim[i];
+      i++;
+      step++;
+    }, speed);
+  }
 }
 
 function animeChange() {
@@ -114,14 +115,14 @@ function changeFont() {
 }
 
 function turbo() {
-  console.log("turbo triggered");
+  // console.log("turbo triggered");
   let e = document.getElementById("turbo");
   if (e.checked) {
     speed = 50;
   } else {
     speed = 250;
   }
-  console.log("Set speed to: " + speed);
-  console.log("current anime: " + currAnim);
+  // console.log("Set speed to: " + speed);
+  // console.log("current anime: " + currAnim);
   run(getAnim(currAnim), speed);
 }

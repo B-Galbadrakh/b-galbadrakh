@@ -16,9 +16,9 @@ fieldset {
 legend {
   text-align: left;
 }
-article {
+/* article {
   text-size-adjust: central;
-}
+} */
 button {
   width: 47%;
 }

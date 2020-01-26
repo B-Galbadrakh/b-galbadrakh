@@ -1,4 +1,5 @@
 (function() {
+  "use strict";
   //   Setting filter function in Stirng object
   String.prototype.filter = function(removeingWord) {
     return this.replace(removeingWord, "");
@@ -65,4 +66,12 @@
   teacher.initialize("Professor", 32);
   //   console.log(teacher.describe());
   console.log(teacher.teach("JS"));
+
+  //   describe("Max function", function() {
+  //     context("returns max number from given two numbers", function() {
+  //       it("max is 3", function() {
+  //         assert.equal(max(2, 3), 3);
+  //       });
+  //     });
+  //   });
 })();

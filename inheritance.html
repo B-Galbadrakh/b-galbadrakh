@@ -6,9 +6,29 @@ In this lab I have learned the inheritance of in Javascript. Javascript is so dy
 In order to complete this assignment I had to go to lecture slides and review once again after I have been taught in class. This helped me a lot and I learned that a lot of ways of inheritance exist in javascript.
 In Second part of the assignment I stuggled a little bit with mocha test in 3rd task, but eventually I figured it out. The error was in my moche test. In second task I have implemented bubble sort on javascript, that I have implemented in first time in JS -->
   <head>
+    <!-- add mocha css, to show results -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css"
+    />
+    <!-- add mocha framework code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+    <script>
+      mocha.setup("bdd"); // minimal setup
+    </script>
+    <!-- add chai -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+    <script>
+      // chai has a lot of stuff, let's make assert global
+      let assert = chai.assert;
+    </script>
     <script src="js/inheritance.js"></script>
   </head>
   <body>
-    <h1>The javascript output is in the console. Windows: Control+Shift+J</h1>
+    <!-- <h1>The javascript output is in the console. Windows: Control+Shift+J</h1> -->
+    <div id="mocha"></div>
+    <script>
+      mocha.run();
+    </script>
   </body>
 </html>

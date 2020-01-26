@@ -48,12 +48,13 @@
   var Student = function() {};
   Student.prototype = new Person();
   Student.prototype.learn = function(subject) {
-    console.log(this.name + " just learned " + subject);
+    return this.name + " just learned " + subject;
   };
 
   var me = new Student();
-  me.initialize("galaa");
+  me.initialize("galaa", 22);
   me.learn("inheritance");
+  console.log(me.describe());
 
   var Teacher = function() {};
 
@@ -64,14 +65,32 @@
 
   var teacher = new Teacher();
   teacher.initialize("Professor", 32);
-  //   console.log(teacher.describe());
   console.log(teacher.teach("JS"));
 
-  //   describe("Max function", function() {
-  //     context("returns max number from given two numbers", function() {
-  //       it("max is 3", function() {
-  //         assert.equal(max(2, 3), 3);
-  //       });
-  //     });
-  //   });
+  describe("Student object test", function() {
+    context("Student object test", function() {
+      it("Describe student", function() {
+        assert.equal(me.describe(), "galaa, 22 years old");
+      });
+    });
+    context("Student learns", function() {
+      it("Student learns", function() {
+        assert.equal(me.learn("inheritance"), "galaa just learned inheritance");
+      });
+    });
+
+    // context("Student object test", function() {
+    //   it("Describe student", function() {
+    //     assert.equal(me.describe(), "galaa, 22 years old");
+    //   });
+    // });
+  });
+
+  describe("Teacher object test", function() {
+    context("Teacher describes", function() {
+      it("Describe teacher", function() {
+        assert.equal(teacher.describe(), "Professor, 32 years old");
+      });
+    });
+  });
 })();

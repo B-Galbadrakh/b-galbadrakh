@@ -35,7 +35,6 @@ class CheckingAccount extends Account {
   }
 
   endOfMonth() {
-    console.log(this._balance);
     if (this._balance <= 0) {
       console.log(
         "Warning, low balance checking account: " +

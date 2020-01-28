@@ -42,7 +42,6 @@ class Bank {
 
   endOfMonth() {
     for (let accIndex in this._accounts) {
-      console.log(accIndex);
       this._accounts[accIndex].endOfMonth();
     }
   }

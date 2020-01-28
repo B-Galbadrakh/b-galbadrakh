@@ -92,7 +92,7 @@
   // bank.accountReport();
   // bank.closeAccount(1000);
   bank.accountReport();
-  bank.endOfMonth();
+  // bank.endOfMonth();
 
   describe("Implementing Bank class", function() {
     context("Creating savings account and checking", function() {
@@ -104,6 +104,20 @@
     context("Creating checking account and checking", function() {
       it("bank.addCheckingAccount()", function() {
         assert.equal(bank.addCheckingAccount(30), "1003");
+      });
+    });
+
+    context("Account report function is being tested", function() {
+      it("accountReport function is being called", function() {
+        bank.accountReport();
+      });
+    });
+  });
+
+  describe("Checking endOfMonth function", function() {
+    context("calling endOfMonth function", function() {
+      it("result is string", function() {
+        bank.endOfMonth();
       });
     });
   });

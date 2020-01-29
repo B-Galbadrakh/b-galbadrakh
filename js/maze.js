@@ -1,3 +1,4 @@
+"user strict";
 $(document).ready(function() {
   $("#start").click(start);
 });
@@ -18,8 +19,6 @@ function end() {
   $("#maze").unbind("mouseleave");
   win = true;
 }
-
-function reset() {}
 
 function red() {
   $("#maze .boundary").addClass("youlose");

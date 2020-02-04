@@ -1,0 +1,11 @@
+.container {
+  float: left;
+}
+
+#posts {
+  background-color: red;
+}
+
+#comments {
+  background-color: green;
+}
